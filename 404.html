@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Page not found</title>
+  <style type="text/css">
+  body {
+    color: #333333;
+    background: #e0e0e0;
+    text-align: center;
+    font-family: 'Helvetica Neue', 'Helvetica';
+  }
+  </style>
+</head>
+<body>
+  <img src="/404.png" alt="Page not found" />
+  <p>You will be redirected in <strong id="sec">15</strong> seconds...</p>
+  <p>If you don't wish to wait, or the redirect did not happen - click <a href="/">here</a>.</p>
+  <script type="text/javascript">
+    var sec = 15;
+    var interval = setInterval(function() {
+      document.getElementById('sec').innerHTML = --sec;
+      if (!sec) {
+        clearInterval(interval);
+        setTimeout(function() {
+          location.href = '/';
+        }, 128);
+      }    
+    }, 1024);
+  </script>
+</body>
