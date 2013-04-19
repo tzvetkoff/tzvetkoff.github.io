@@ -1,0 +1,11 @@
+{
+  "name": "BaseJS",
+  "preferGlobal": false,
+  "version": "0.0.1",
+  "author": "LT <latchezar@tzvetkoff.net>",
+  "description": "Description",
+  "dependencies" : {
+    "uglify-js": "",
+    "clean-css" :  ""
+  }
+}

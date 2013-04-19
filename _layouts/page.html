@@ -1,13 +1,10 @@
----
-title: 404
----
 <!DOCTYPE html>
 <html>
 <head>
   <!-- charset, viewport and title -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1, user-scalable=no" />
-  <title>{{ page.title }}</title>
+  <title>{{ page.title }} @ {{ site.title }}</title>
 
   <!-- metas for webapps added to homescreen and other stuff -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -29,24 +26,13 @@ title: 404
   <div id="wrapper">
     {% include header.html %}
 
-    <article style="text-align: center; background: #e0e0e0">
-      <img src="/assets/images/404.png" alt="" />
-      <p>You will be redirected in <strong id="sec">15</strong> seconds...</p>
-      <p>If you don't wish to wait, or the redirect did not happen - click <a href="/">here</a>.</p>
-      <script type="text/javascript">
-        //<![CDATA[
-          var sec = 15;
-          var interval = setInterval(function() {
-            document.getElementById('sec').innerHTML = --sec;
-            if (!sec) {
-              clearInterval(interval);
-              setTimeout(function() {
-                location.href = '/';
-              }, 128);
-            }
-          }, 1024);
-        //]]>
-      </script>
+    <article>
+      <header class="article">
+        <h1>{{ page.title }}</h1>
+      </header>
+
+      {{ content }}
+      {% include comments.html %}
     </article>
 
     {% include footer.html %}

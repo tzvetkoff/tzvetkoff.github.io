@@ -1,0 +1,14 @@
+# Finder
+.DS_Store
+
+# RVM
+.rvmrc
+
+# Jekyll
+_site
+
+# Node.js
+node_modules
+
+# Keep this one though
+! .gitkeep

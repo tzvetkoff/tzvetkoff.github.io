@@ -1,0 +1,19 @@
+permalink: /posts/:year/:month/:day/:title.html
+
+exclude: [".rvmrc", "README.md", "CNAME", "main.js", "main.css", "syntax.css", "package.json", "build.js", "node_modules"]
+auto: true
+markdown: rdiscount
+pygments: true
+
+title: The Nerd Archive
+author:
+  name: Latchezar Tzvetkoff
+  email: latchezar&lt;foo&gt;tzvetkoff&lt;bar&gt;net
+  github: tzvetkoff
+  twitter: tzvetkoff
+  facebook: tzvetkoff
+
+disqus:
+  shortname: tzvetkoff
+
+production_url: http://tzvetkoff.net
