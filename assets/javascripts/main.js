@@ -1,3 +1,3 @@
-document.attachEvent && document.attachEvent('onload', function() {
+window.attachEvent && window.attachEvent('onload', function() {
   document.body.innerHTML = 'ie, srsly!?!?';
 });
