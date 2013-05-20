@@ -94,6 +94,10 @@ header.article {
   padding: 0 0 20px 0;
 }
 
+.default header.article {
+  padding: 0;
+}
+
   header.article time {
     font-size: 16px;
     color: #a0a0a0;
@@ -173,6 +177,8 @@ article {
     }
 
       article ul.posts li time {
+        float: left;
+        min-width: 128px;
         color: #a0a0a0;
       }
 
