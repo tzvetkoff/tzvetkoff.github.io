@@ -124,6 +124,7 @@ article {
     background: #f0f0f0;
     border: 1px solid #c0c0c0;
     border-radius: 10px;
+    overflow: auto;
   }
 
   article p {
