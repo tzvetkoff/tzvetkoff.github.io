@@ -147,14 +147,29 @@ article {
   }
 
   article ul {
+    list-style: disc inside;
     margin: 20px 0;
   }
+
+    article ul li {
+      margin: 10px 0;
+    }
+
+  article ol {
+    list-style: decimal inside;
+    margin: 20px 0;
+  }
+
+    article ol li {
+      margin: 10px 0;
+    }
 
   article ul.posts {
     list-style: none outside;
   }
 
     article ul.posts li {
+      margin: 0;
     }
 
       article ul.posts li time {
@@ -268,6 +283,14 @@ article {
     border-top: 0;
     border-bottom: 0;
   }
+
+    article ul {
+      list-style: disc outside;
+    }
+
+    article ol {
+      list-style: decimal outside;
+    }
 
   footer {
     position: fixed;
