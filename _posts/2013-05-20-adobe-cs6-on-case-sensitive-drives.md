@@ -12,6 +12,13 @@ And it doesn't just refuse to install on a case-sensitive drive, but it also req
 Well, there's a solution. I've just stumbled upon [this](https://bitbucket.org/lokkju/adobe_case_sensitive_volumes), and I'm really anxious to share it.
 I've forked the code to update it for CS6.
 
+## Prerequisites
+
+1.  `Xcode`.
+    You can install it from the [AppStore](https://itunes.apple.com/app/xcode/id497799835).
+2.  Command Line Tools for Xcode.
+    You can install it from Xcode's `Preferences` -> `Downloads`.
+
 ## A step-by-step installation instructions
 
 <ol>
