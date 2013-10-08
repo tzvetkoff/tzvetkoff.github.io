@@ -28,15 +28,19 @@ function fileWrite(filename, contents) {
 }
 
 var
-  ieDev           = fileRead('assets/javascripts/ie.js'),
-  ieMin           = js(ieDev, jsConfig).code,
+  jsDev   = fileRead('assets/javascripts/main.js'),
+  jsMin   = js(jsDev, jsConfig).code,
 
-  cssDev          = fileRead('assets/stylesheets/main.css'),
-  cssMin          = css(cssDev, cssConfig),
+  ieDev   = fileRead('assets/javascripts/ie.js'),
+  ieMin   = js(ieDev, jsConfig).code,
 
-  synDev          = fileRead('assets/stylesheets/syntax.css'),
-  synMin          = css(synDev, cssConfig);
+  cssDev  = fileRead('assets/stylesheets/main.css'),
+  cssMin  = css(cssDev, cssConfig),
 
+  synDev  = fileRead('assets/stylesheets/syntax.css'),
+  synMin  = css(synDev, cssConfig);
+
+fileWrite('assets/javascripts/main.min.js', jsMin);
 fileWrite('assets/javascripts/ie.min.js', ieMin);
 fileWrite('assets/stylesheets/main.min.css', cssMin);
 fileWrite('assets/stylesheets/syntax.min.css', synMin);
