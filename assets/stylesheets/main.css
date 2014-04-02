@@ -289,14 +289,6 @@ article {
     border-bottom: 0;
   }
 
-    article ul {
-      list-style: disc outside;
-    }
-
-    article ol {
-      list-style: decimal outside;
-    }
-
   footer {
     position: fixed;
     left: 32px;

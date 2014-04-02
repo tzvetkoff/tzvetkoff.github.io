@@ -2,13 +2,11 @@
 
 var
   fs = require('fs'),
-  css = require('clean-css').process,
-  js = require('uglify-js').minify,
-
+  cssProcessor = require('clean-css'),
+  jsProcessor = require('uglify-js'),
   cssConfig = {
     keepSpecialComments     : 0,
     keepBreaks              : false,
-    removeEmpty             : true,
     debug                   : false,
   },
   jsConfig = {
@@ -20,27 +18,33 @@ var
     unused                  : false,
   };
 
-function fileRead(filename) {
+function css(source) {
+  return new cssProcessor(cssConfig).minify(source);
+}
+function js(source) {
+  return jsProcessor.minify(source, jsConfig);
+}
+function read(filename) {
   return fs.readFileSync(filename).toString();
 }
-function fileWrite(filename, contents) {
+function write(filename, contents) {
   return fs.writeFileSync(filename, contents)
 }
 
 var
-  jsDev   = fileRead('assets/javascripts/main.js'),
+  jsDev   = read('assets/javascripts/main.js'),
   jsMin   = js(jsDev, jsConfig).code,
 
-  ieDev   = fileRead('assets/javascripts/ie.js'),
+  ieDev   = read('assets/javascripts/ie.js'),
   ieMin   = js(ieDev, jsConfig).code,
 
-  cssDev  = fileRead('assets/stylesheets/main.css'),
+  cssDev  = read('assets/stylesheets/main.css'),
   cssMin  = css(cssDev, cssConfig),
 
-  synDev  = fileRead('assets/stylesheets/syntax.css'),
+  synDev  = read('assets/stylesheets/syntax.css'),
   synMin  = css(synDev, cssConfig);
 
-fileWrite('assets/javascripts/main.min.js', jsMin);
-fileWrite('assets/javascripts/ie.min.js', ieMin);
-fileWrite('assets/stylesheets/main.min.css', cssMin);
-fileWrite('assets/stylesheets/syntax.min.css', synMin);
+write('assets/javascripts/main.min.js', jsMin);
+write('assets/javascripts/ie.min.js', ieMin);
+write('assets/stylesheets/main.min.css', cssMin);
+write('assets/stylesheets/syntax.min.css', synMin);

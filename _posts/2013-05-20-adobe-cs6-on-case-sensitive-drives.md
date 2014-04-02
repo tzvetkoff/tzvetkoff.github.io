@@ -89,6 +89,13 @@ That's it!
 <br />
 Just remember that you'll need to mount the SparseBundle every time you need to use Adobe's products...
 
+## Update @ 2014-04-01
+
+You can also run the updater (`Adobe Application Manager`), with a slightly different command:
+{% highlight bash %}
+sudo make run CS6_INSTALLER_PATH='"/Applications/Utilities/Adobe Application Manager/core/Adobe Application Manager.app/Contents/MacOS/PDApp"'
+{% endhighlight %}
+Note the double quoting!
 
 ## Thanks
 

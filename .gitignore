@@ -1,9 +1,6 @@
 # Finder
 .DS_Store
 
-# RVM
-.rvmrc
-
 # Jekyll
 _site
 
@@ -12,3 +9,6 @@ node_modules
 
 # Keep this one though
 ! .gitkeep
+
+# Gemfile.lock
+Gemfile.lock
