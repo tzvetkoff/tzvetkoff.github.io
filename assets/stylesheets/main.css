@@ -49,6 +49,10 @@ header.main {
       text-decoration: none;
     }
 
+    header.main h4 a:hover {
+      text-decoration: underline;
+    }
+
   header.main h5 {
     font-size: 16px;
     color: #87837a;
@@ -141,6 +145,7 @@ article {
   article a {
     color: #e14e0c;
     text-decoration: none;
+    font: normal 16px 'Menlo', 'Bitstream Vera Sans Mono', 'Lucida Console P', 'Courier New', 'monospace';
   }
 
   article a:hover,
