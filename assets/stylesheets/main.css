@@ -253,7 +253,7 @@ article {
 /* big tvs */
 @media only screen and (min-width: 1410px) {
   body {
-    background: #ffffff url('../images/body.png') no-repeat scroll 50% 0;
+    background: #ffffff url('../images/body.png') no-repeat fixed 50% 0;
   }
 
   header.main {
