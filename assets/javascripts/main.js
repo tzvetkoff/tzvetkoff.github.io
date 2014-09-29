@@ -3,13 +3,26 @@
     required = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
     current = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+  var articles, article, headings, elements, element, i, length, found, temp, temp2;
+
   var on = 'addEventListener' in document ? function(object, event, func) {
     object.addEventListener(event, func, false);
   } : function(object, event, func) {
     object.attachEvent('on' + event, func);
   };
 
+  var $A = function(iterable) {
+    if (!iterable) return [];
+    if (iterable.toArray) return iterable.toArray();
+    var length = iterable.length, results = new Array(length);
+    while (length--) results[length] = iterable[length];
+    return results;
+  };
+
   var load = function() {
+    //
+    // konami
+    //
     if ( !(function(){try{return!!document.createEvent('TouchEvent')}catch(e){}})() ) {
       on(window, 'keyup', function(event) {
         current.push(event.keyCode ? event.keyCode : event.which);
@@ -42,9 +55,75 @@
       });
     }
 
-    var elements = document.getElementsByTagName('a');
-    for (var i = 0, length = elements.length; i < length; ++i) {
-      var element = elements[i];
+    //
+    // permalinks
+    //
+    articles = document.getElementsByTagName('article');
+    article = articles[0];
+
+    if (article) {
+      elements = $A(document.getElementsByTagName('h1'));
+      elements = elements.concat($A(document.getElementsByTagName('h2')));
+      elements = elements.concat($A(document.getElementsByTagName('h3')));
+      elements = elements.concat($A(document.getElementsByTagName('h4')));
+
+      for (i = 0, length = elements.length; i < length; ++i) {
+        temp = element = elements[i];
+        
+        found = false;
+        do {
+          if (temp.parentNode == article) {
+            found = true;
+            break;
+          }
+          if (temp.parentNode == document.body || temp.parentNode == document.documentElement || temp.parentNode == document) {
+            break;
+          }
+
+          temp = temp.parentNode;
+        } while (temp);
+        if (!found) {
+          continue;
+        }
+
+        if (!(temp = element.id)) {
+          temp = element.textContent ? element.textContent : element.innerText;
+          temp = temp.replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
+                     .replace(/([a-z\d])([A-Z])/g, '$1_$2')
+                     .replace(/[\s_]/g, '-')
+                     .replace(/[^0-9a-z-]/gi, '')
+                     .replace(/^-+/, '')
+                     .replace(/-+$/, '')
+                     .replace(/-+/g, '-')
+                     .toLowerCase();
+          if (temp && temp.length) {
+            element.id = temp;
+          } else {
+            continue;
+          }
+        }
+
+        var temp2 = document.createElement('a');
+        temp2.className = 'permalink';
+        temp2.href = '#' + temp;
+        temp2.innerHTML = '¶';
+
+        element.appendChild(temp2);
+      }
+    }
+
+    if (window.location.hash && window.scrollY === 0) {
+      setTimeout(function() {
+        window.location = window.location;
+      }, 5);
+    }
+
+    //
+    // link fx
+    //
+    elements = document.getElementsByTagName('a');
+    for (i = 0, length = elements.length; i < length; ++i) {
+      element = elements[i];
 
       if (element.className.indexOf('no-leet') == -1) {
         if (!element.dataset) {
