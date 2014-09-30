@@ -112,12 +112,6 @@
       }
     }
 
-    if (window.location.hash && window.scrollY === 0) {
-      setTimeout(function() {
-        window.location = window.location;
-      }, 5);
-    }
-
     //
     // link fx
     //

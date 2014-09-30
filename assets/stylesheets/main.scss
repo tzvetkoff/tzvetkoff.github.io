@@ -2,21 +2,6 @@
 ---
 
 /*
- * font definitions
- */
-
-@font-face {
-  font-family: 'SSStandard';
-  src: url('../fonts/ss-standard/ss-standard.eot');
-  src: url('../fonts/ss-standard/ss-standard.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/ss-standard/ss-standard.woff') format('woff'),
-       url('../fonts/ss-standard/ss-standard.ttf') format('truetype'),
-       url('../fonts/ss-standard/ss-standard.svg#SSStandard') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/*
  * some reset and common stuffs
  */
 
@@ -137,8 +122,6 @@ article {
   h1, h2, h3, h4 {
     margin: 15px 0;
     font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     cursor: text;
     position: relative;
     color: #333333;
@@ -222,6 +205,40 @@ article {
     }
   }
 
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-collapse: collapse;;
+
+    thead {
+      tr {
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+
+        th {
+          padding: 5px 10px;
+          border: 1px solid #dddddd;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        background-color: #ffffff;
+        border-top: 1px solid #cccccc;
+
+        &:nth-child(2n+1) {
+          background-color: #f0f0f0;
+        }
+        td {
+          padding: 5px 10px;
+          border: 1px solid #dddddd;
+        }
+      }
+    }
+  }
+
   a {
     font: normal 85% 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
     color: #4183c4;
@@ -233,7 +250,7 @@ article {
   }
 
   code {
-    padding: 0.2em 0.3em;
+    padding: 3px 6px;
     background: #f0f0f0;
     border-radius: 3px;
     font: normal 85% 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
@@ -246,6 +263,7 @@ article {
     background: #f0f0f0;
     border-radius: 3px;
     overflow: auto;
+    line-height: 19px;
 
     code {
       padding: 0;
