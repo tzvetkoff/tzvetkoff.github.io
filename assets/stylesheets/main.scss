@@ -128,21 +128,20 @@ article {
 
     a.permalink {
       position: absolute;
-      left: 0px;
+      left: -30px;
       top: 0;
-      width: 0.76em;
-      margin-left: -0.75em;
-      font-size: inherit;
+      width: 30px;
+      text-align: right;
+      font-size: 90%;
       line-height: inherit;
-      color: inherit;
       text-decoration: none;
       background-color: inherit;
-      visibility: hidden;
+      color: #ffffff;
     }
 
     &:hover {
       a.permalink {
-        visibility: visible;;
+        color: #333333;
       }
     }
   }
@@ -251,7 +250,7 @@ article {
 
   code {
     padding: 3px 6px;
-    background: #f0f0f0;
+    background: #f4f4f4;
     border-radius: 3px;
     font: normal 85% 'Consolas', 'Liberation Mono', 'Menlo', 'Courier', monospace;
     color: #333333;
@@ -260,7 +259,7 @@ article {
   pre {
     margin: 15px 0;
     padding: 15px;
-    background: #f0f0f0;
+    background: #f4f4f4;
     border-radius: 3px;
     overflow: auto;
     line-height: 19px;
@@ -345,7 +344,7 @@ article {
 
 @media only screen and (min-width: 1410px) {
   body {
-    background: #ffffff url('../images/body.png') no-repeat fixed 50% 0;
+    background: #ffffff url('../images/body.png') no-repeat scroll 50% 0;
   }
 
   header.main {
@@ -410,4 +409,3 @@ article {
     }
   }
 }
-
