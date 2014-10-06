@@ -1,6 +1,16 @@
 permalink: /posts/:year/:month/:day/:title.html
 
-exclude: [".ruby-version", ".ruby-gemset", "Gemfile", "Gemfile.lock", "README.md", "CNAME", "package.json", "build.js", "node_modules"]
+exclude:
+- .ruby-version
+- .ruby-gemset
+- Gemfile
+- Gemfile.lock
+- README.md
+- CNAME
+- package.json
+- build.js
+- node_modules
+- assets/javascripts/main.js
 markdown: kramdown
 highlighter: pygments
 
