@@ -69,7 +69,7 @@
 
       for (i = 0, length = elements.length; i < length; ++i) {
         temp = element = elements[i];
-        
+
         found = false;
         do {
           if (temp.parentNode == article) {
@@ -88,14 +88,15 @@
 
         if (!(temp = element.id)) {
           temp = element.textContent ? element.textContent : element.innerText;
-          temp = temp.replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2')
-                     .replace(/([a-z\d])([A-Z])/g, '$1_$2')
-                     .replace(/[\s_]/g, '-')
-                     .replace(/[^0-9a-z-]/gi, '')
-                     .replace(/^-+/, '')
-                     .replace(/-+$/, '')
-                     .replace(/-+/g, '-')
+          temp = temp.replace(/([A-Z]+)([A-Z][a-z])/g, '$1_$2') // underscore
+                     .replace(/([a-z\d])([A-Z])/g, '$1_$2')     // once again
+                     .replace(/[\s]/g, '-')                     // replace spaces
+                     .replace(/[^0-9A-Za-z_-]/g, '-')           // replace non-alphanumeric chars
+                     .replace(/^-+/, '')                        // leading dashes
+                     .replace(/-+$/, '')                        // trailing dashes
+                     .replace(/-+/g, '-')                       // middle...
                      .toLowerCase();
+
           if (temp && temp.length) {
             element.id = temp;
           } else {
