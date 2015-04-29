@@ -1,14 +1,15 @@
-# Finder
-.DS_Store
-
 # Jekyll
-_site
+/_site
 
 # Node.js
-node_modules
+/node_modules
+
+# Gemfile.lock
+/Gemfile.lock
+
+# Finder
+.DS_Store
+._.*
 
 # Keep this one though
 ! .gitkeep
-
-# Gemfile.lock
-Gemfile.lock
