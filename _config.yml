@@ -12,7 +12,7 @@ exclude:
 - node_modules
 - assets/javascripts/main.js
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 
 sass:
   style: :compressed
