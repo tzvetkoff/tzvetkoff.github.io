@@ -11,5 +11,10 @@
 .DS_Store
 ._.*
 
+# Ruby
+/.ruby-version
+/.ruby-gemset
+/.ruby-env
+
 # Keep this one though
 ! .gitkeep
