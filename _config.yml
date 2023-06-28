@@ -15,9 +15,11 @@ markdown: kramdown
 highlighter: rouge
 
 sass:
-  style: :compressed
+  style: compressed
+  sass_dir: assets/stylesheets
 
 title: The Nerd Archive
+
 author:
   name: Latchezar Tzvetkoff
   email: latchezar&lt;foo&gt;tzvetkoff&lt;bar&gt;net

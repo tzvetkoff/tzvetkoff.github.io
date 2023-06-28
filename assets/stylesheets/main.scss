@@ -122,6 +122,7 @@ article {
   h1, h2, h3, h4 {
     margin: 15px 0;
     font-weight: bold;
+    line-height: 1em;
     cursor: text;
     position: relative;
     color: #333333;
@@ -132,8 +133,9 @@ article {
       top: 0;
       width: 30px;
       text-align: right;
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
       font-size: 90%;
-      line-height: inherit;
+      line-height: 1em;
       text-decoration: none;
       background-color: inherit;
       color: #ffffff;
@@ -150,7 +152,6 @@ article {
     font-size: 36px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eeeeee;
-    line-height: 1.2em;
   }
 
   h2 {
@@ -166,11 +167,17 @@ article {
   h4 {
     font-size: 20px;
   }
-  
+
+  hr {
+    margin: 15px 0;
+    border-top: 0 none;
+    border-bottom: 1px solid #eeeeee;
+  }
+
   p {
     margin: 0 0 10px 0;
     -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    font-smooth: always;
   }
 
   ul {
@@ -409,3 +416,5 @@ article {
     }
   }
 }
+
+@import '_syntax';

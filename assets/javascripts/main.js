@@ -3,7 +3,7 @@
     required = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],
     current = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-  var articles, article, headings, elements, element, i, length, found, temp, temp2;
+  var articles, article, elements, element, i, length, found, temp, permalink;
 
   var on = 'addEventListener' in document ? function(object, event, func) {
     object.addEventListener(event, func, false);
@@ -29,7 +29,6 @@
         current.shift();
 
         if (current >= required && current <= required) {
-
           if (!document.getElementById('super-mario')) {
             var element = document.createElement('div'), style = element.style;
             style.position = 'fixed';
@@ -104,12 +103,12 @@
           }
         }
 
-        var temp2 = document.createElement('a');
-        temp2.className = 'permalink';
-        temp2.href = '#' + temp;
-        temp2.innerHTML = '¶';
+        permalink = document.createElement('a');
+        permalink.className = 'permalink';
+        permalink.href = '#' + temp;
+        permalink.innerHTML = '¶';
 
-        element.appendChild(temp2);
+        element.insertBefore(permalink, element.firstChild);
       }
     }
 
@@ -160,5 +159,5 @@
     }
   };
 
-  on(window, 'load', load);
+  on(document, 'DOMContentLoaded', load);
 })();
