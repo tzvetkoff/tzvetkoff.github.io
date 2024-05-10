@@ -4,12 +4,12 @@ var
   fs = require('fs'),
   jsProcessor = require('uglify-js'),
   jsConfig = {
-    fromString              : true,
-    copyright               : false,
-    comments                : false,
-    bracketize              : true,
-    indent_level            : 2,
-    unused                  : false,
+    toplevel: true,
+    compress: true,
+    mangle: true,
+    output: {
+      beautify: false
+    }
   };
 
 function js(source) {
@@ -23,7 +23,7 @@ function write(filename, contents) {
 }
 
 var
-  jsDev   = read('assets/javascripts/main.js'),
+  jsDev   = read('assets/javascripts/main.src.js'),
   jsMin   = js(jsDev, jsConfig).code;
 
-write('assets/javascripts/main.min.js', jsMin);
+write('assets/javascripts/main.js', jsMin);

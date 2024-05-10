@@ -8,17 +8,23 @@ exclude:
 - README.md
 - CNAME
 - package.json
+- package-lock.json
+- node_modules/
 - build.js
-- node_modules
-- assets/javascripts/main.js
+- assets/javascripts/main.src.js
+- cache/
+- script/
+- vendor/
+
 markdown: kramdown
 highlighter: rouge
+title: Latchezar Tzvetkoff
+subtitle: A nerd's personal archive
+production_url: http://tzvetkoff.net
 
 sass:
   style: compressed
   sass_dir: assets/stylesheets
-
-title: The Nerd Archive
 
 author:
   name: Latchezar Tzvetkoff
@@ -29,5 +35,3 @@ author:
 
 disqus:
   shortname: tzvetkoff
-
-production_url: http://tzvetkoff.net

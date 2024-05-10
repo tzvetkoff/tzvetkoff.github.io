@@ -1,9 +1,11 @@
 # Jekyll
 /_site
 /.sass-cache
+/.jekyll-metadata
 
 # Node.js
 /node_modules
+/package-lock.json
 
 # Gemfile.lock
 /Gemfile.lock
@@ -16,6 +18,9 @@
 /.ruby-version
 /.ruby-gemset
 /.ruby-env
+
+# Gems
+/vendor
 
 # Keep the keepers
 ! .keep

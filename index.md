@@ -10,6 +10,6 @@ title: Welcome
 </ul>
 
 <p>
-  This site is powered by <a href="https://github.com/jekyll/jekyll">Jekyll</a> and hosted on <a href="https://github.com/">GitHub</a>.
-  You can see the source <a href="https://github.com/tzvetkoff/tzvetkoff.github.io">here</a>.
+  This site is powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://github.com/">GitHub</a>.<br />
+  Source available <a href="https://github.com/tzvetkoff/tzvetkoff.github.io">here</a>.
 </p>

@@ -3,7 +3,10 @@ title: Projects
 layout: page
 ---
 
-<p>An [<em>incomplete</em>] list of some more or less interesting projects of mine.</p>
+<p>
+  An [<em>incomplete</em>] list of some more or less interesting projects of mine.<br />
+  You'd better visit my <a href="https://github.com/{{ site.author.github }}">GitHub</a> page.
+</p>
 
 <ul class="posts">
   <li>
@@ -17,6 +20,10 @@ layout: page
   <li>
     <a href="https://github.com/tzvetkoff/hashids.c">Hashids.c</a>
     <p>The C port of the <a href="http://hashids.org/">Hashids</a> library.</p>
+  </li>
+  <li>
+    <a href="https://github.com/sqids/sqids-c">Sqids.c</a>
+    <p>The C port of the <a href="https://sqids.org/">Sqids</a> library.</p>
   </li>
   <li>
     <a href="https://github.com/tzvetkoff/im2a">im2a</a>
